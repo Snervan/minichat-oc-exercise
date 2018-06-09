@@ -14,7 +14,7 @@
 		<label for="pseudo">Pseudo : </label>
 		<input type="text" id="pseudo" name="pseudo" 
 				<?php if (isset($_COOKIE['pseudo'])) {
-									echo "value='".$_COOKIE['pseudo']."' ";
+									echo "value='".htmlspecialchars($_COOKIE['pseudo'])."' ";
 								}?> 
 				required /> <BR>
 
