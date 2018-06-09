@@ -23,7 +23,7 @@ class BDD
 		}
 	}
 
-	function getMessages($page, $nbMessagesParPages = 5) {
+	function GetMessages($page, $nbMessagesParPages = 5) {
 		include('conf/conf.php');
 
 		$offset = ($page-1) * $nbMessagesParPages; //On y affecte l'index de départ
@@ -38,10 +38,10 @@ class BDD
 
 		$result->closeCursor();
 
-		$this->pagination($offset, $page, $nbMessagesParPages, $tableName);
+		$this->Pagination($offset, $page, $nbMessagesParPages, $tableName);
 	}
 
-	function pagination($offset, $page, $nbMessagesParPages, $tableName) {
+	function Pagination($offset, $page, $nbMessagesParPages, $tableName) {
 		$request = $this->bdd->query("SELECT COUNT(id) FROM $tableName");
 
 		while($donnees = $request->fetch())
@@ -61,7 +61,7 @@ class BDD
 		}
 	}
 
-	function saveMessage($pseudo, $message) {
+	function SaveMessage($pseudo, $message) {
 		include('conf/conf.php');
 		$reqText = "INSERT INTO ".htmlspecialchars($tableName)."(pseudo, message, datemsg) VALUES(? , ?, NOW())";
 

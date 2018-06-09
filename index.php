@@ -30,9 +30,9 @@
 		if(isset($_GET['page']) && is_numeric($_GET['page']))
 		{
 			$page = (int)htmlspecialchars($_GET['page']);
-			$bdd->getMessages($page, 10);
+			$bdd->GetMessages($page, 10);
 		} else {
-			$bdd->getMessages(1, 10);
+			$bdd->GetMessages(1, 10);
 		}
 	 ?>
 
